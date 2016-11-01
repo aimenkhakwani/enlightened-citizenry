@@ -1,6 +1,13 @@
 {{#if bill.short_title}}
-  <h2>{{bill.short_title}}</h2>
+  <h2>{{bill.short_title}}<span class="link"><a target="_blank" href="{{bill.last_version.urls.pdf}}">[ Link to Bill ]</a></span></h2>
   <h3>{{bill.official_title}}</h3>
 {{else}}
   <h2>{{bill.official_title}}</h2>
+  <a target="_blank" href="{{bill.last_version.urls.pdf}}"><p>Link to Bill</p></a>
 {{/if}}
+<div class="details">
+  <p>Chamber: {{bill.chamber}}</p>
+  <p>Introduced: {{bill.introduced_on}}</p>
+  <p>Last action: {{bill.last_action_at}}</p>
+  <p>Sponsor: {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</p>
+</div>

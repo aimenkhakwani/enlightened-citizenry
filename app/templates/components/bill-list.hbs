@@ -1,4 +1,4 @@
-{{#each bills as |bill|}}
+{{#each sortedBills as |bill|}}
   <div class='well'>
     {{#if bill.short_title}}
       {{#link-to 'bill' bill.bill_id}}<h3>{{bill.short_title}}</h3>{{/link-to}}
