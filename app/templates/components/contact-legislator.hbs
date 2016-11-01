@@ -1,0 +1,18 @@
+<div class="well">
+  <h4>Contact your local legislator!</h4>
+  <br>
+  {{input class="form-control" value=zipcode id="zipcode" placeholder="Zipcode" enter="findLegislator"}}
+  <br>
+  <button {{action 'findLegislator'}} class="btn btn-primary center-block">Go!</button>
+  <div>
+    {{#if error}}
+      <h5>Sorry, that is not a valid zipcode</h5>
+    {{else}}
+      {{#each legislators as |legislator|}}
+        <br>
+        <a target="_blank" href="{{legislator.contact_form}}"><h5>{{legislator.first_name}} {{legislator.last_name}} ({{legislator.party}})</h5></a>
+        <p>{{legislator.oc_email}}</p>
+      {{/each}}
+    {{/if}}
+  </div>
+</div>

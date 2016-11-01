@@ -14,10 +14,10 @@
   {{#if showSponsor}}
     <div class='well'>
       <p>Sponsor: {{sponsor.first_name}} {{sponsor.last_name}}</p>
-      <p>Chamber: {{sponser.chamber}}</p>
-      <p>Party Affiliation: {{sponser.party}}</p>
-      <p>State: {{sponser.state_name}}</p>
-      <p>In Office: {{sponsor.in_office}}</p>
+      <p>Chamber: {{chamber-name sponsor.chamber}}</p>
+      <p>Party Affiliation: {{party-name sponsor.party}}</p>
+      <p>State: {{sponsor.state_name}}</p>
+      <p>In Office: {{enacted-boolean sponsor.in_office}}</p>
       <p></p>
     </div>
   {{/if}}
