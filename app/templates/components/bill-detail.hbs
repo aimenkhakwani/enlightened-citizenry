@@ -6,8 +6,19 @@
   <a target="_blank" href="{{bill.last_version.urls.pdf}}"><p>Link to Bill</p></a>
 {{/if}}
 <div class="details">
-  <p>Chamber: {{bill.chamber}}</p>
+  <p>Chamber: {{chamber-name bill.chamber}}</p>
   <p>Introduced: {{bill.introduced_on}}</p>
   <p>Last action: {{bill.last_action_at}}</p>
-  <p>Sponsor: {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}</p>
+  <p>Enacted: {{enacted-boolean bill.history.active}}</p>
+  <p>Sponsor: {{bill.sponsor.first_name}} {{bill.sponsor.last_name}} <button {{action 'showSponsor' bill.sponsor.first_name bill.sponsor.last_name}} class='btn btn-link'>Learn More</button></p>
+  {{#if showSponsor}}
+    <div class='well'>
+      <p>Sponsor: {{sponsor.first_name}} {{sponsor.last_name}}</p>
+      <p>Chamber: {{sponser.chamber}}</p>
+      <p>Party Affiliation: {{sponser.party}}</p>
+      <p>State: {{sponser.state_name}}</p>
+      <p>In Office: {{sponsor.in_office}}</p>
+      <p></p>
+    </div>
+  {{/if}}
 </div>
