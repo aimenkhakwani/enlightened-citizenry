@@ -1,0 +1,10 @@
+{{#each bills as |bill|}}
+  <div class='well'>
+    {{#if bill.short_title}}
+      <h3>{{bill.short_title}}</h3>
+      <h5>{{bill.official_title}}</h5>
+    {{else}}
+      <h3>{{bill.official_title}}</h3>
+    {{/if}}
+  </div>
+{{/each}}
